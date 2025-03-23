@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikunjya Kumar - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Nikunjya Kumar</h1>
+        <p style="font-size: 23px;">Full-Stack Web Developer & UI/UX Designer</p>
+        <p>Email: <a href="mailto:nikunjyakumar@gmail.com"
+          class="email-link"
+          onclick="sendEmail(event)">nikunjyakumar@gmail.com</a></p>
+        
+        <script>
+          function sendEmail(event) {
+    event.preventDefault(); // Prevents default action in case mailto: fails
+          var email = "nikunjyakumar@gmail.com";
+          var subject = "Hello";
+          var body = "Hi, I would like to connect with you.";
+
+         // Try opening default email client
+          var mailtoLink = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+          window.location.href = mailtoLink;
+
+         // If mailto: fails, open Gmail in browser
+          setTimeout(function() {
+            if (window.location.href === mailtoLink) {
+              window.location.href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + email + "&su=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+                          }
+          }, 500);
+          }
+        </script>
+        
+        <style>
+          a {
+        color: #FFD700; /* Gold color */
+        text-decoration: none; /* Removes underline */
+          }
+          a:hover {
+        color: #FFA500; /* Slightly different color when hovered */
+          }
+        
+          h1 {
+    font-size: 4.5rem; /* Adjust size as needed */
+    font-weight: bold;
+    color: #ffffff; /* Royal Blue */
+          }
+          .email-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFD700; /* Gold color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease-in-out;
+}
+
+          .email-link:hover {
+    color: #FFC107; /* Slightly darker gold */
+    text-decoration: underline;
+}
+        </style>
+
+        
+    </header>
+
+    <section id="about">
+        <h2>🔹 About Me</h2>
+        <p>I craft stunning, user-friendly websites with seamless functionality and pixel-perfect designs. As a Full-Stack Web Developer & UI/UX Designer, I bring ideas to life with clean code, intuitive interfaces, and a deep focus on user experience. Let’s build something amazing together!</p>
+    </section>
+
+    <section id="skills">
+     <h2>🔹 Skills & Expertise</h2>
+
+      <h3><i class="fas fa-code"></i> Frontend Development</h3>
+      <ul>
+         <li>✔ Proficient in <strong>HTML, CSS, JavaScript</strong> for responsive and interactive web design.</li>
+         <li>✔ Experience in creating modern UI/UX using <strong>CSS frameworks</strong> like Bootstrap & Tailwind CSS.</li>
+          <li>✔ Strong understanding of <strong>CSS animations & transitions</strong> to enhance user engagement.</li>
+      </ul>
+  
+      <h3><i class="fas fa-server"></i> Backend Development</h3>
+      <ul>
+          <li>✔ Skilled in <strong>Python (Flask, Django)</strong> for building dynamic web applications.</li>
+          <li>✔ Experience with <strong>PHP & MySQL</strong> for server-side programming.</li>
+          <li>✔ Knowledge of <strong>RESTful APIs</strong> for seamless communication between frontend & backend.</li>
+      </ul>
+
+      <h3><i class="fas fa-database"></i> Database Management</h3>
+      <ul>
+          <li>✔ Proficient in working with <strong>SQLite, MySQL</strong> for efficient data storage and retrieval.</li>
+          <li>✔ Understanding of <strong>database normalization & query optimization</strong> for better performance.</li>
+      </ul>
+
+      <h3><i class="fas fa-chart-line"></i> SEO & Content Optimization</h3>
+      <ul>
+          <li>✔ Writing <strong>SEO-optimized content</strong> to improve website ranking and visibility.</li>
+          <li>✔ Experience in <strong>meta-tag optimization, keyword research, and Google Analytics.</strong></li>
+      </ul>
+
+      <h3><i class="fas fa-code-branch"></i> Version Control & Deployment</h3>
+      <ul>
+          <li>✔ Familiar with <strong>Git & GitHub</strong> for version control and collaboration.</li>
+          <li>✔ Knowledge of <strong>web hosting & deployment</strong> on platforms like PythonAnywhere, Replit, Render, GitHub Pages.</li>
+      </ul>
+
+      <h3><i class="fas fa-user-check"></i> Soft Skills</h3>
+      <ul>
+          <li>✔ <strong>Strong problem-solving skills</strong> and ability to troubleshoot technical issues.</li>
+          <li>✔ <strong>Effective communication & teamwork</strong> for successful project collaboration.</li>
+          <li>✔ Passion for <strong>continuous  learning</strong> and staying updated with the latest technologies.</li>
+      </ul>
+    </section>
+    
+    <section id="work-experience">
+      <h2>🔹 Work Experience</h2>
+      <ul>
+        <li>✔ Freelance Web Developer since 2022, delivering high-quality websites and web applications.</li>
+        <li>✔ Experienced in full-stack development using HTML, CSS, JavaScript, Python (Flask/Django), PHP, and MySQL.</li>
+        <li>✔ Specialized in building responsive, user-friendly, and SEO-optimized websites.</li>
+        <li>✔ Proficient in deploying and maintaining websites on platforms like PythonAnywhere, Replit, Render, GitHub Pages.</li>
+        <li>✔ Collaborated with clients to transform their ideas into fully functional web solutions.</li>
+      </ul>
+      <button onclick="window.location.href='projects.html'" class="btn">View My Projects</button>
+</section>
+</section>
+
+
+<!-- FontAwesome for Icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js)." crossorigin="anonymous"></script>
+     
+    <div id="header"></div>
+
+<script>
+    // Fetch and insert the header
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+            // Ensure script runs after header loads
+            let script = document.createElement("script");
+            script.src = "script.js";
+            document.body.appendChild(script);
+        })
+        .catch(error => console.error("Error loading header:", error));
+</script>
+
+    <footer>
+        <p>© 2025 Nikunjya Kumar | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

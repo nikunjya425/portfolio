@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects - Nikunjya Kumar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Nikunjya Kumar</h1>
+        <p style="font-size: 23px;">Full-Stack Web Developer & UI/UX Designer</p>
+        <p>Email: <a href="mailto:nikunjyakumar@gmail.com"
+          class="email-link"
+          onclick="sendEmail(event)">nikunjyakumar@gmail.com</a></p>
+        
+        <script>
+          function sendEmail(event) {
+    event.preventDefault(); // Prevents default action in case mailto: fails
+          var email = "nikunjyakumar@gmail.com";
+          var subject = "Hello";
+          var body = "Hi, I would like to connect with you.";
+
+         // Try opening default email client
+          var mailtoLink = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+          window.location.href = mailtoLink;
+
+         // If mailto: fails, open Gmail in browser
+          setTimeout(function() {
+            if (window.location.href === mailtoLink) {
+              window.location.href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + email + "&su=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+                          }
+          }, 500);
+          }
+        </script>
+        
+        <style>
+          a {
+        color: #FFD700; /* Gold color */
+        text-decoration: none; /* Removes underline */
+          }
+          a:hover {
+        color: #FFA500; /* Slightly different color when hovered */
+          }
+        
+          h1 {
+    font-size: 4.5rem; /* Adjust size as needed */
+    font-weight: bold;
+    color: #ffffff; /* Royal Blue */
+          }
+          .email-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFD700; /* Gold color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease-in-out;
+}
+
+          .email-link:hover {
+    color: #FFC107; /* Slightly darker gold */
+    text-decoration: underline;
+}
+        </style>
+
+        
+    </header>
+
+    <section id="projects">
+        <h2>🔹 My Best Projects</h2>
+
+        <div class="project">
+            <h3>1. Business Website</h3>
+            <p>Developed a professional website using HTML, CSS, and JavaScript.</p>
+        </div>
+
+        <div class="project">
+            <h3>2. Portfolio Website</h3>
+            <p>Designed and coded a portfolio website to showcase my projects and skills.</p>
+        </div>
+
+        <div class="project">
+            <h3>3. Blogging Platform</h3>
+            <p>Built a blog website with a content management system using Python and Flask.</p>
+        </div>
+
+    </section>
+    
+    <section id="why-work-with-me">
+      <h2>🔹 Why Work With Me?</h2>
+      <ul>
+        <li>✔ <strong>Experienced & Reliable</strong> – Freelancing since 2022, delivering high-quality web solutions.</li>
+        <li>✔ <strong>Full-Stack Expertise</strong> – Skilled in <strong>HTML, CSS, JavaScript, Python (Flask/Django), PHP, and MySQL</strong>.</li>
+        <li>✔ <strong>Client-Centric Approach</strong> – I prioritize your goals, ensuring a seamless user experience.</li>
+        <li>✔ <strong>SEO & Performance Optimized</strong> – Websites built for <strong>speed, efficiency, and top search rankings</strong>.</li>
+        <li>✔ <strong>Modern & Responsive Designs</strong> – Ensuring a <strong>flawless experience</strong> on all devices.</li>
+        <li>✔ <strong>Scalable & Maintainable Code</strong> – Writing <strong>clean, structured, and future-proof code</strong>.</li>
+        <li>✔ <strong>Quick Turnaround & Support</strong> – Delivering projects <strong>on time with ongoing assistance</strong>.</li>
+        <li>✔ <strong>Secure & Bug-Free Websites</strong> – Implementing <strong>best security practices</strong> to protect your data.</li>
+        <li>✔ <strong>Transparent Communication</strong> – Keeping you updated at every step for a <strong>hassle-free experience</strong>.</li>
+        <li>✔ <strong>Affordable & Flexible Pricing</strong> – Providing <strong>cost-effective</strong> solutions tailored to your needs.</li>
+      </ul>
+    </section>
+    
+    <section id="contact-cta"> 
+      <h2>🚀  Let’s Turn Your Vision into Reality!</h2>
+      <p>
+        Don’t wait to bring your ideas to life! Whether you need a modern website, a seamless web app, 
+        or a stunning user experience—<strong>let’s make it happen.</strong>
+      </p>
+      <p><strong>Get in touch now and let’s start building something amazing!</strong></p>
+      <button onclick="window.location.href='contact.html'" class="contact-btn">Contact Me</button>
+</section>
+    </section>
+    
+    <div id="header"></div>
+
+<script>
+    // Fetch and insert the header
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+            // Ensure script runs after header loads
+            let script = document.createElement("script");
+            script.src = "script.js";
+            document.body.appendChild(script);
+        })
+        .catch(error => console.error("Error loading header:", error));
+</script>
+
+    <footer>
+        <p>© 2025 Nikunjya Kumar | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

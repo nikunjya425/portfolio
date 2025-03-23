@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Nikunjya Kumar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Nikunjya Kumar</h1>
+        <p style="font-size: 23px;">Full-Stack Web Developer & UI/UX Designer</p>
+        <p>Email: <a href="mailto:nikunjyakumar@gmail.com"
+          class="email-link"
+          onclick="sendEmail(event)">nikunjyakumar@gmail.com</a></p>
+        
+        <script>
+          function sendEmail(event) {
+    event.preventDefault(); // Prevents default action in case mailto: fails
+          var email = "nikunjyakumar@gmail.com";
+          var subject = "Hello";
+          var body = "Hi, I would like to connect with you.";
+
+         // Try opening default email client
+          var mailtoLink = "mailto:" + email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+          window.location.href = mailtoLink;
+
+         // If mailto: fails, open Gmail in browser
+          setTimeout(function() {
+            if (window.location.href === mailtoLink) {
+              window.location.href = "https://mail.google.com/mail/?view=cm&fs=1&to=" + email + "&su=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+                          }
+          }, 500);
+          }
+        </script>
+        
+        <style>
+          a {
+        color: #FFD700; /* Gold color */
+        text-decoration: none; /* Removes underline */
+          }
+          a:hover {
+        color: #FFA500; /* Slightly different color when hovered */
+          }
+        
+          h1 {
+    font-size: 4.5rem; /* Adjust size as needed */
+    font-weight: bold;
+    color: #ffffff; /* Royal Blue */
+          }
+          .email-link {
+    font-size: 18px;
+    font-weight: bold;
+    color: #FFD700; /* Gold color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease-in-out;
+}
+
+          .email-link:hover {
+    color: #FFC107; /* Slightly darker gold */
+    text-decoration: underline;
+}
+        </style>
+
+        
+    </header>
+    
+    <section id="lets-work-together">
+    <h2>💡 Your Vision, My Code – Let’s Create Magic Together!</h2>
+    <p>
+        I’m passionate about crafting <strong>high-performance, visually stunning, and user-friendly</strong> websites. 
+        From small businesses to large-scale applications, I ensure your project stands out.
+    </p>
+    <ul>
+        <li>✅ <strong>Custom solutions tailored to your needs</strong></li>
+        <li>✅ <strong>Timely delivery & transparent communication</strong></li>
+        <li>✅ <strong>Scalable, secure, and SEO-optimized websites</strong></li>
+    </ul>
+    <p><strong>Ready to take your online presence to the next level?</strong> Let’s collaborate! 
+       <Feel></Feel> free to reach out, and let’s discuss how I can help bring your ideas to life.</p>
+</section>
+
+    <section id="contact">
+        <h2>🔹 Contact Me</h2>
+        <p>Feel free to connect with me through any of the following platforms:</p>
+
+        <ul>
+            <li>Email: <a href="mailto:nikunjyakumar@gmail.com?subject=Hello&body=Hi, I would like to connect with you." class="email-button">nikunjyakumar@gmail.com</a></li>
+            <li>Instagram: <a href="https://instagram.com/nikunjya.245" target="_blank">Instagram.com/nikunjya.245</a></li>
+            <li>WhatsApp: <a href="https://wa.me/919752606089" target="_blank">Chat on WhatsApp</a></li>
+        </ul>
+        
+        <style>
+          a {
+        color: #0056b3; /* Gold color */
+        text-decoration: none; /* Removes underline */
+          }
+          a:hover {
+        color: #003d80; /* Slightly different color when hovered */
+          }
+        </style>
+        
+    </section>
+    
+    <div id="header"></div>
+
+<script>
+    // Fetch and insert the header
+    fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header').innerHTML = data;
+            // Ensure script runs after header loads
+            let script = document.createElement("script");
+            script.src = "script.js";
+            document.body.appendChild(script);
+        })
+        .catch(error => console.error("Error loading header:", error));
+</script>
+
+    <footer>
+        <p>© 2025 Nikunjya Kumar | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
